@@ -12,20 +12,18 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: "Arial Black", Arial, sans-serif;
-
-  /* animowane kotki */
   background:
     url("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif") repeat,
     linear-gradient(135deg, #ffd1e8, #ffe6f2);
   background-size: 220px 220px, cover;
 }
 
-/* GRAFFITI TŁO */
+/* GRAFFITI */
 body::before {
   content: "Kasia i Oktawian ❤️   Kasia i Oktawian ❤️   Kasia i Oktawian ❤️";
   position: fixed;
   inset: 0;
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 900;
   color: rgba(255,20,147,0.18);
   transform: rotate(-25deg);
@@ -38,13 +36,12 @@ body::before {
   z-index: 0;
 }
 
-/* KARTA */
 .card {
   position: relative;
   z-index: 2;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   padding: 40px;
-  border-radius: 25px;
+  border-radius: 26px;
   text-align: center;
   max-width: 380px;
   margin: auto;
@@ -53,7 +50,6 @@ body::before {
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* PYTANIE */
 h1 {
   font-size: 34px;
   font-weight: 900;
@@ -61,11 +57,10 @@ h1 {
   text-shadow:
     2px 2px 0 #fff,
     4px 4px 0 #ff69b4,
-    6px 6px 10px rgba(255,20,147,.6);
+    6px 6px 12px rgba(255,20,147,.6);
   margin-bottom: 25px;
 }
 
-/* PRZYCISKI */
 button {
   border: none;
   border-radius: 18px;
@@ -95,7 +90,7 @@ button {
   to { transform: rotate(6deg); }
 }
 
-/* SERDUSZKA */
+/* SERCA */
 .heart {
   position: fixed;
   bottom: -30px;
@@ -121,7 +116,7 @@ button {
 </div>
 
 <script>
-/* UCIEKAJĄCE "NIE" */
+/* UCIEKAJĄCE NIE */
 const noBtn = document.getElementById("noBtn");
 
 function moveNo() {
@@ -134,20 +129,56 @@ moveNo();
 noBtn.addEventListener("mouseover", moveNo);
 noBtn.addEventListener("touchstart", moveNo);
 
-/* PO KLIKNIĘCIU TAK */
+/* --- FINALNA FUNKCJA YESCLICK --- */
 function yesClick() {
   document.body.innerHTML = `
     <div style="
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      background: linear-gradient(135deg,#ffd1e8,#ffe6f2);
+      min-height:100vh;
+      background:linear-gradient(135deg,#ffd1e8,#ffe6f2);
       font-family:'Arial Black', Arial;
-      padding:40px;
+      padding:30px;
     ">
+
+      <div style="
+        display:flex;
+        justify-content:center;
+        gap:30px;
+        margin-bottom:35px;
+        flex-wrap:wrap;
+      ">
+
+        <div style="
+          padding:16px;
+          border:12px solid hotpink;
+          border-radius:40px;
+          box-shadow:0 0 30px rgba(255,20,147,0.8);
+          background:white;
+        ">
+          <img src="IMG_1715.jpeg" style="
+            width:320px;
+            max-width:100%;
+            border-radius:28px;
+          ">
+        </div>
+
+        <div style="
+          padding:16px;
+          border:12px solid hotpink;
+          border-radius:40px;
+          box-shadow:0 0 30px rgba(255,20,147,0.8);
+          background:white;
+        ">
+          <img src="IMG_0550.jpeg" style="
+            width:320px;
+            max-width:100%;
+            border-radius:28px;
+          ">
+        </div>
+
+      </div>
+
       <h1 style="
+        text-align:center;
         font-size:30px;
         font-weight:900;
         color:#ff1493;
@@ -160,11 +191,12 @@ function yesClick() {
         zgadzając się na tak ryzykowny krok w swoim życiu 😈<br><br>
         do zobaczenia ❤️
       </h1>
+
     </div>
   `;
 }
 
-/* LATAJĄCE SERCA */
+/* SERCA */
 function createHeart() {
   const h = document.createElement("div");
   h.className = "heart";
